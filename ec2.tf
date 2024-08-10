@@ -19,7 +19,7 @@ host     = self.public_ip
 }
 
 provisioner "remote-exec" { 
-    inline = [ # following commands are used in ec2 server
+    inline = [ # following commands are executed in ec2 server
         "sudo dnf install ansible -y",
         "sudo dnf install nginx -y",
         "sudo systemctl start nginx"

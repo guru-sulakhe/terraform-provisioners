@@ -4,7 +4,7 @@ resource "aws_instance" "db" {
   instance_type = "t2.micro"
 
 provisioner "local-exec" {
-    command = "echo The server's IP address is ${self.private_ip} > private_ips.txt" # self is aws_instance.web , private_ips.txt file is created
+    command = "echo The server's IP address is ${self.private_ip} > private_ips.txt" # self is aws_instance.web ,this will store private IPV4 address in private_ips.txt file 
   }
 
 #provisioner "local-exec" {
@@ -29,5 +29,5 @@ provisioner "remote-exec" {
 
 # here privisoner is used to query the private ip address from aws_instance.web and storing it on private_ips.txt
 # provisioners are used when you are creating resources
-# provisioners will run once resources are created
+# provisioners will run, once resources are created
 # it will display privisioners error, so try to run it on linux server and install terraform,ansible in it.
